@@ -1,0 +1,29 @@
+---
+# mkimg setup templating
+
+default:
+  distribution:
+    distribution: fedora
+    release: 32
+
+  output:
+    format: directory
+    outputdirectory: buildroot
+
+  packages:
+    packages: 
+      - dnf
+      - dnf-utils
+      - systemd
+      - passwd
+
+passwd:
+  passwd: mypassword
+
+repos:
+  nagativo:
+    url: https://negativo17.org/repos/multimedia/fedora-32/x86_64/
+
+compose:
+  base:
+    url: http://nuc0.callicotte.org/os-images/e19153a34e69a2bcd74acfe29e914494.sendstream.zst
